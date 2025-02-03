@@ -10,7 +10,9 @@
 **vi/vim工作模式示意图**
 
 <img width="255" alt="151afbfface16e07c1b2d2a499a8abf" src="https://github.com/user-attachments/assets/980d74d5-5647-44f5-9005-f73682ab7bbe" />
+
 **命令模式快捷键**
+
 | 模式 | 命令 | 描述 |
 | ---- | ---- | --- |
 | 命令模式 | `i` | 在当前光标位置进入输入模式 |
