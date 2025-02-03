@@ -42,7 +42,7 @@ _特殊路径符_
 
 * .表示当前目录，比如cd./Desktop
 * ..表示上一级目录，比如cd..或cd../..
-* ~表示用户的HOME目录，比如cd~或cd~/Desktop
+* /~表示用户的HOME目录，比如cd~或cd~/Desktop
 
 mkdir用于创建新的目录（文件夹），-p适用于创建连续多层级目录，如下  `mkdir [-p] Linux路径`
 
