@@ -78,7 +78,8 @@ Nano使用方法
 ### 3.2ssh
 
 使用：
-```ssh 用户名@hostname
+```
+ssh 用户名@hostname
 
 ssh -l [用户名] hostname
 
