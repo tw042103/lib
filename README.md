@@ -209,3 +209,7 @@ tail查看文件尾部内容，跟踪文件最新更改，如下  `tail [-f -num
 * 恢复改动：git stash pop
                        
 >原文链接：https://blog.csdn.net/weixin_51170516/article/details/111187007
+
+复制内容生成ssh密钥时，无法打开id_rsa.pub这个文件，解决方法如下：
+
+在windows终端使用type命令查看文件内容
