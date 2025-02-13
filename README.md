@@ -80,9 +80,7 @@ Nano使用方法
 使用：
 ```
 ssh 用户名@hostname
-
 ssh -l [用户名] hostname
-
 ssh hostname
 ```
 
