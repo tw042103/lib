@@ -177,3 +177,35 @@ tail查看文件尾部内容，跟踪文件最新更改，如下  `tail [-f -num
 可参考以下网址
 
 >https://blog.csdn.net/weixin_44419695/article/details/88127644
+
+### 6.git命令行基本用法
+
+1.提交步骤
+
+* git init 初始化git仓库 (mac中Command+Shift+. 可以显示隐藏文件)
+* git status 查看文件状态
+* git add 文件列表 追踪文件
+* git commit -m 提交信息 向仓库中提交代码
+* git log 查看提交记录
+
+2.撤销
+
+* 用暂存区中的文件覆盖工作目录中的文件： git checkout 文件名
+* 将文件从暂存区中删除： git rm --cached 文件名
+* 将 git 仓库中指定的更新记录恢复出来，并且覆盖暂存区和工作目录：git reset --hard commitID
+
+3.分支命令
+
+* git branch 查看分支
+* git branch 分支名称 创建分支
+* git checkout 分支名称 切换分支
+* git merge 来源分支 合并分支 (备注：必须在master分支上才能合并develop分支)
+* git branch -d 分支名称 删除分支（分支被合并后才允许删除）（-D 强制删除）
+
+4.暂时保存更改
+* 在git中，可以暂时提取分支上所有的改动并存储，让开发人员得到一个干净的工作副本，临时转向其他工作。
+* 使用场景：分支临时切换
+* 存储临时改动：git stash
+* 恢复改动：git stash pop
+                       
+>原文链接：https://blog.csdn.net/weixin_51170516/article/details/111187007
