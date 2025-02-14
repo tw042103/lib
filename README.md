@@ -222,3 +222,5 @@ tail查看文件尾部内容，跟踪文件最新更改，如下  `tail [-f -num
 
 * img_path:图片路径，路径错误返回None
 * flag:cv2.IMREAD_COLOR
+
+在vscode运行c++时找不到gcc路径无法运行，尚未解决
