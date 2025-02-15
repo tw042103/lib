@@ -232,14 +232,14 @@ tail查看文件尾部内容，跟踪文件最新更改，如下  `tail [-f -num
 * img_path_name:文件名
 * img:文件对象
 
-图像缩放：  `cv2.resize(img,dsize,fx,fy,interpolation)
+图像缩放：  `cv2.resize(img,dsize,fx,fy,interpolation)`
 
 * fx,fy表示水平方向和垂直方向的缩放比例
 * interpolation表示插值方式
 
-图像色彩空间转换：  `cv2.cvtColor(img,code)
+图像色彩空间转换：  `cv2.cvtColor(img,code)`
 
-图像显示：  `cv2.imshow(winname,img)
+图像显示：  `cv2.imshow(winname,img)`
 
 * winname:窗口名称
 * img:显示的图像
