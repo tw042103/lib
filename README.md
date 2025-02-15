@@ -218,12 +218,37 @@ tail查看文件尾部内容，跟踪文件最新更改，如下  `tail [-f -num
 
 ### 1.基础命令
 
+#### python:
+
 图像读取：  `cv2.IMREAD(img_path,flag)`
 
 * img_path:图片路径，路径错误返回None
-* flag:cv2.IMREAD_COLOR
+* flag:cv2.IMREAD_COLOR，读取彩色图片，图片透明性会被忽略，为默认参数，也可传入1
+* flag:cv2.IMREAD_GRAYSCALE，灰度模式，也可传0
+* flag:cv2.IMREAD_UNCHANGED，读取图像，包括其alpha通道，也可以传入-1
 
-使用c++调用opencv时显示图片界面无法成功加载，几秒后闪退，仍未解决
+图像保存：  `cv2.imwrite(img_path,img)`
+
+* img_path_name:文件名
+* img:文件对象
+
+图像缩放：  `cv2.resize(img,dsize,fx,fy,interpolation)
+
+* fx,fy表示水平方向和垂直方向的缩放比例
+* interpolation表示插值方式
+
+图像色彩空间转换：  `cv2.cvtColor(img,code)
+
+图像显示：  `cv2.imshow(winname,img)
+
+* winname:窗口名称
+* img:显示的图像
+
+#### c++:
+
+
+
+使用c++调用opencv时显示图片界面无法成功加载，几秒后闪退，问题出在图像后缀名错误，需注意
 
 ![a083260ccb55ad5be313a342277998e](https://github.com/user-attachments/assets/28211c53-2ac1-4daa-876a-a5574dc21940)
 
