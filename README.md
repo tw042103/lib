@@ -223,4 +223,7 @@ tail查看文件尾部内容，跟踪文件最新更改，如下  `tail [-f -num
 * img_path:图片路径，路径错误返回None
 * flag:cv2.IMREAD_COLOR
 
-在vscode运行c++时找不到gcc路径无法运行，尚未解决
+使用c++调用opencv时显示图片界面无法成功加载，几秒后闪退，仍未解决
+
+![a083260ccb55ad5be313a342277998e](https://github.com/user-attachments/assets/28211c53-2ac1-4daa-876a-a5574dc21940)
+
