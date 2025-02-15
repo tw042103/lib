@@ -7,7 +7,7 @@ using namespace cv;
 
 int main() {
     // 读取图像
-    cv::Mat image = cv::imread("cqss.png"); // 替换为你的图像路径
+    cv::Mat image = cv::imread("cqss.png"); 
     if (image.empty()) {
         std::cerr << "Error: Could not open or find the image!" << std::endl;
         return -1;
