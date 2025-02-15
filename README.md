@@ -213,3 +213,17 @@ tail查看文件尾部内容，跟踪文件最新更改，如下  `tail [-f -num
 复制内容生成ssh密钥时，无法打开id_rsa.pub这个文件，解决方法如下：
 
 在windows终端使用type命令查看文件内容
+
+## 二，Opencv
+
+### 1.基础命令
+
+图像读取：  `cv2.IMREAD(img_path,flag)`
+
+* img_path:图片路径，路径错误返回None
+* flag:cv2.IMREAD_COLOR
+
+使用c++调用opencv时显示图片界面无法成功加载，几秒后闪退，仍未解决
+
+![a083260ccb55ad5be313a342277998e](https://github.com/user-attachments/assets/28211c53-2ac1-4daa-876a-a5574dc21940)
+
