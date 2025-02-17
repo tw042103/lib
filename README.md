@@ -246,6 +246,16 @@ tail查看文件尾部内容，跟踪文件最新更改，如下  `tail [-f -num
 
 #### c++:
 
+在写简单的opencv程序时，可用以下头文件
+
+``
+#include <opencv2/core/core.hpp>
+
+#include <opencv2/highgui/highgui.hpp>
+
+using namespace cv;
+``
+
 OpenCV操作像素的几种方法(单个像素|操作多像素|遍历像素)
 
 at()访问像素
@@ -258,7 +268,9 @@ at()访问像素
 
 ``
 Mat gray_img(100, 100, CV_8U, Scalar(100));
+
 gray_img.at<uchar>(30,20) =255;            
+
 uchar value1 = gray_img.at<uchar>(30,20); 
 ``
 
@@ -266,7 +278,9 @@ uchar value1 = gray_img.at<uchar>(30,20);
 
 ``
 Mat color_img(100, 100, CV_8UC3, Scalar(200,100,0));
+
 img.at<Vec3b>(30,20)[0] =255;        
+
 uchar value2 = img.at<Vec3b>(30,20)[0]; 
 ``
 ptr函数输入指定列，返回指向此列的第一个元素
