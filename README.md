@@ -220,6 +220,8 @@ tail查看文件尾部内容，跟踪文件最新更改，如下  `tail [-f -num
 
 #### python:
 
+1.
+
 图像读取：  `cv2.IMREAD(img_path,flag)`
 
 * img_path:图片路径，路径错误返回None
@@ -244,7 +246,12 @@ tail查看文件尾部内容，跟踪文件最新更改，如下  `tail [-f -num
 * winname:窗口名称
 * img:显示的图像
 
+2.
+
+**数组之间不能直接赋值，可用`result = np.zeros_like(image)`**
 #### c++:
+
+1.
 
 在写简单的opencv程序时，可用以下头文件
 
@@ -255,6 +262,20 @@ tail查看文件尾部内容，跟踪文件最新更改，如下  `tail [-f -num
 
 using namespace cv;
 ``
+
+**图像的载入：imread()函数**
+
+`Mat imread(const string& filename,intflags=1);`
+
+* 前者为地址，后者为模式
+
+**图像的显示：imshow()函数**
+
+`void imshow((const string& winname, InputArray mat);`
+
+* 前者为窗口名，后者为传入的图像
+
+2.
 
 OpenCV操作像素的几种方法(单个像素|操作多像素|遍历像素)
 
@@ -287,6 +308,8 @@ ptr函数输入指定列，返回指向此列的第一个元素
 
 * 改变像素：template T* Mat::ptr(int i=0)
 * 读取像素：template const T* Mat::ptr(int i=0) const
+
+**注意：数组之间不能直接赋值，可用`Mat img0=img.clone();`,OpenCV 使用 BGR 顺序!!输出时要反过来输出**
 
 使用c++调用opencv时显示图片界面无法成功加载，几秒后闪退，问题出在图像后缀名错误，需注意
 
