@@ -249,6 +249,18 @@ tail查看文件尾部内容，跟踪文件最新更改，如下  `tail [-f -num
 2.
 
 **数组之间不能直接赋值，可用`result = np.zeros_like(image)`**
+
+3.
+
+图像阈值分割threshold
+
+`thresh,result=cv2.threshold (src, thresh, maxval, type)`
+
+* thresh为设定阈值，取值范围为0-255，数据类型为浮点型（输入可以为整型）
+* result为进行阈值分割后的结果图像，数据类型为整数矩阵
+* src为被进行分割的源图像
+* maxval为最大值，为分割后的图像所取到的灰度最大值
+* type为阈值分割的类型
 #### c++:
 
 1.
