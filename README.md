@@ -246,7 +246,33 @@ tail查看文件尾部内容，跟踪文件最新更改，如下  `tail [-f -num
 
 #### c++:
 
+OpenCV操作像素的几种方法(单个像素|操作多像素|遍历像素)
 
+at()访问像素
+
+* 改变像素：template T& Mat::at(int i, int j)
+* 读取像素：template const T& Mat::at(int i, int j) const
+* **在灰度图中，Opencv里可用uchar代替unsigned char,在彩色图中，Opencv里可用Ver3b代替将三个uchar组成的容器(vector)，且可在后面加上[]。注明是要操作此元素的哪个通道**
+
+下面操作一个8位元灰度图，分别改变某个像素的值，以及查看此像素的值：
+
+``
+Mat gray_img(100, 100, CV_8U, Scalar(100));
+gray_img.at<uchar>(30,20) =255;            
+uchar value1 = gray_img.at<uchar>(30,20); 
+``
+
+下面分别改变彩色图某个像素的第一通道值，以此查看此元素第一通道的值：
+
+``
+Mat color_img(100, 100, CV_8UC3, Scalar(200,100,0));
+img.at<Vec3b>(30,20)[0] =255;        
+uchar value2 = img.at<Vec3b>(30,20)[0]; 
+``
+ptr函数输入指定列，返回指向此列的第一个元素
+
+* 改变像素：template T* Mat::ptr(int i=0)
+* 读取像素：template const T* Mat::ptr(int i=0) const
 
 使用c++调用opencv时显示图片界面无法成功加载，几秒后闪退，问题出在图像后缀名错误，需注意
 
