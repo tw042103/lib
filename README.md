@@ -350,6 +350,23 @@ ptr函数输入指定列，返回指向此列的第一个元素
 
 **注意：数组之间不能直接赋值，可用`Mat img0=img.clone();`,OpenCV 使用 BGR 顺序!!输出时要反过来输出**
 
+5.
+多通道分离函数split()
+```
+void cv::split(const Mat & src,
+                 Mat * mvbegin
+                 )
+void cv::split(InputArray m,
+                 OutputArrayOfArrays mv
+                 )
+
+```
+
+* src：待分离的多通道图像。
+* mvbegin：分离后的单通道图像，为数组形式，数组大小需要与图像的通道数相同
+* m：待分离的多通道图像
+* mv：分离后的单通道图像，为向量vector形式
+
 使用c++调用opencv时显示图片界面无法成功加载，几秒后闪退，问题出在图像后缀名错误，需注意
 
 ![a083260ccb55ad5be313a342277998e](https://github.com/user-attachments/assets/28211c53-2ac1-4daa-876a-a5574dc21940)
