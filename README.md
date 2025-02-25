@@ -264,6 +264,8 @@ tail查看文件尾部内容，跟踪文件最新更改，如下  `tail [-f -num
 
 _处理较大图片时，用普通方法计算均值会导致运算量过大，图片无法正常显示，应选用np.mean()函数_
 
+_, binary_image = cv2.threshold(gray_image, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)使用 Otsu's 方法自动选择阈值
+
 3.
 
 浅拷贝  
