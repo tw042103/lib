@@ -290,6 +290,12 @@ d = copy.deepcopy(a)
 （2）浅拷贝的拷贝。其实是拷贝了原始元素的引用（内存地址），所以当拷贝可变对象时，原对象内可变对象的对应元素的改变，会在复制对象的对应元素上，有所体现
 （3）深拷贝在遇到可变对象时，又在内部做了新建了一个副本。所以，不管它内部的元素如何变化，都不会影响到原来副本的可变对象
 
+9.
+
+`opening = cv2.morphologyEx(image, cv2.MORPH_OPEN, kernel)`  开运算
+
+`closing = cv2.morphologyEx(image, cv2.MORPH_CLOSE, kernel)`  闭运算
+
 10.
 
 python中def用来建立函数
