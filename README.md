@@ -467,7 +467,6 @@ cv::MORPH_CROSS: 十字形结构元素
 
 （4）应用双阈值的方法来决定可能的边界
 
-使用c++调用opencv时显示图片界面无法成功加载，几秒后闪退，问题出在图像后缀名错误，需注意
+**opencv-c++中的常见函数**
 
-![a083260ccb55ad5be313a342277998e](https://github.com/user-attachments/assets/28211c53-2ac1-4daa-876a-a5574dc21940)
-
+1.cv::Point 是 OpenCV 中的一个类，用于表示二维点的坐标。它通常用于图像处理中的坐标表示，例如绘制图形或标记特定位置。
