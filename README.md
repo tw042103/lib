@@ -306,6 +306,15 @@ python中def用来建立函数
 
 image.shape返回图像的高度（行数）和宽度（列数）
 
+11.
+
+* num_labels：所有连通域的数目
+* labels：图像上每一像素的标记，用数字1、2、3…表示（不同的数字表示不同的连通域）
+* stats：每一个标记的统计信息，是一个5列的矩阵，每一行对应每个连通区域的外接矩形的x、y、width、height和面积，示例如下： 0 0 720 720 291805
+* centroids：连通域的中心点
+
+`num_labels, labels, stats, centroids = cv2.connectedComponentsWithStats(arr_gray, connectivity=8)`
+
 **python中常见函数**
 
 1.np.where 函数接受一个布尔数组作为输入，并返回满足条件的元素的索引。对于二维数组，它会返回两个数组：第一个数组包含满足条件的元素的行索引，第二个数组包含列索引。
