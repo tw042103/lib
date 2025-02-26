@@ -264,6 +264,8 @@ tail查看文件尾部内容，跟踪文件最新更改，如下  `tail [-f -num
 
 _处理较大图片时，用普通方法计算均值会导致运算量过大，图片无法正常显示，应选用np.mean()函数_
 
+_, binary_image = cv2.threshold(gray_image, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)使用 Otsu's 方法自动选择阈值
+
 3.
 
 浅拷贝  
@@ -288,6 +290,14 @@ d = copy.deepcopy(a)
 （2）浅拷贝的拷贝。其实是拷贝了原始元素的引用（内存地址），所以当拷贝可变对象时，原对象内可变对象的对应元素的改变，会在复制对象的对应元素上，有所体现
 （3）深拷贝在遇到可变对象时，又在内部做了新建了一个副本。所以，不管它内部的元素如何变化，都不会影响到原来副本的可变对象
 
+9.
+
+`opening = cv2.morphologyEx(image, cv2.MORPH_OPEN, kernel)`  开运算
+
+`closing = cv2.morphologyEx(image, cv2.MORPH_CLOSE, kernel)`  闭运算
+
+_开运算去白噪点，闭运算去黑噪点_
+
 10.
 
 python中def用来建立函数
@@ -295,6 +305,15 @@ python中def用来建立函数
 高斯函数核由高斯公式生成
 
 image.shape返回图像的高度（行数）和宽度（列数）
+
+11.
+
+* num_labels：所有连通域的数目
+* labels：图像上每一像素的标记，用数字1、2、3…表示（不同的数字表示不同的连通域）
+* stats：每一个标记的统计信息，是一个5列的矩阵，每一行对应每个连通区域的外接矩形的x、y、width、height和面积，示例如下： 0 0 720 720 291805
+* centroids：连通域的中心点
+
+`num_labels, labels, stats, centroids = cv2.connectedComponentsWithStats(arr_gray, connectivity=8)`
 
 **python中常见函数**
 
@@ -321,6 +340,13 @@ image.shape返回图像的高度（行数）和宽度（列数）
 10.cv2.convertScaleAbs(sobel_x) 是 OpenCV 中的一个函数，它用于将图像的像素值转换为无符号 8 位整型（uint8）格式，并且在这个过程中进行缩放和绝对值处理。这个函数的主要用途是在图像处理过程中处理梯度图像时，确保结果在适当的范围内，以便可以正确显示。
 
 11.append 是 Python 列表对象的一个方法，用于在列表的末尾添加新的元素。
+
+12.numpy中的取整函数
+
+* `np.floor()`  向下取整
+* `np.ceil()`  向上取整
+* `np.round()`  四舍五入
+* `np.trunc()`  返回小于或等于给定数字的最大整数（与 int() 类似）
 #### c++:
 
 1.
@@ -415,6 +441,19 @@ gamma校正原理
 　　2. 预补偿 ：根据公式  , 求出像素归一化后的 数据以  1 /gamma  为指数的对应值。这一步包含一个 求指数运算。若  gamma  值为  2. 2 ,  则  1 /gamma  为  0. 454545 , 对归一化后的  A  值进行预补偿的结果就 是  0. 783203 ^0. 454545 = 0. 894872 。 
 
 　　3. 反归一化 ：将经过预补偿的实数值反变换为  0  ～  255  之间的整数值。具体算法为 : f*256 - 0. 5  此步骤包含一个乘法和一个减法运算。续前 例  , 将  A  的预补偿结果  0. 894872  代入上式  , 得到  A  预补偿后对应的像素值为  228 , 这个  228  就是最后送 入显示器的数据。
+
+9.
+
+getStructuringElement 函数用于生成形态学操作所需的结构元素
+
+`cv::Mat cv::getStructuringElement(int shape, const cv::Size& ksize, cv::Point anchor = cv::Point(-1, -1));`
+
+* shape: 结构元素的形状，可以是以下之一：
+cv::MORPH_RECT: 矩形结构元素
+cv::MORPH_ELLIPSE: 椭圆形结构元素
+cv::MORPH_CROSS: 十字形结构元素
+* ksize: 结构元素的大小，使用 cv::Size(width, height) 指定宽度和高度。
+* anchor: 结构元素的锚点，默认为 (-1, -1)，表示结构元素的中心点。
 
 10.
 
