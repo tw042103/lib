@@ -296,6 +296,8 @@ d = copy.deepcopy(a)
 
 `closing = cv2.morphologyEx(image, cv2.MORPH_CLOSE, kernel)`  闭运算
 
+_开运算去白噪点，闭运算去黑噪点_
+
 10.
 
 python中def用来建立函数
