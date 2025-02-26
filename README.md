@@ -442,6 +442,19 @@ gamma校正原理
 
 　　3. 反归一化 ：将经过预补偿的实数值反变换为  0  ～  255  之间的整数值。具体算法为 : f*256 - 0. 5  此步骤包含一个乘法和一个减法运算。续前 例  , 将  A  的预补偿结果  0. 894872  代入上式  , 得到  A  预补偿后对应的像素值为  228 , 这个  228  就是最后送 入显示器的数据。
 
+9.
+
+getStructuringElement 函数用于生成形态学操作所需的结构元素
+
+`cv::Mat cv::getStructuringElement(int shape, const cv::Size& ksize, cv::Point anchor = cv::Point(-1, -1));`
+
+* shape: 结构元素的形状，可以是以下之一：
+cv::MORPH_RECT: 矩形结构元素
+cv::MORPH_ELLIPSE: 椭圆形结构元素
+cv::MORPH_CROSS: 十字形结构元素
+* ksize: 结构元素的大小，使用 cv::Size(width, height) 指定宽度和高度。
+* anchor: 结构元素的锚点，默认为 (-1, -1)，表示结构元素的中心点。
+
 10.
 
 **Canny的实现步骤**
