@@ -343,12 +343,27 @@ image.shape返回图像的高度（行数）和宽度（列数）
 
 11.append 是 Python 列表对象的一个方法，用于在列表的末尾添加新的元素。
 
-12.numpy中的取整函数
+12.numpy中的取整函数（数据类型不变）
 
 * `np.floor()`  向下取整
 * `np.ceil()`  向上取整
 * `np.round()`  四舍五入
 * `np.trunc()`  返回小于或等于给定数字的最大整数（与 int() 类似）
+
+13.cv2.findContours()查找图像中轮廓
+
+`contours, hierarchy = cv2.findContours(image, mode, method)`
+
+参数：
+
+* mode:轮廓检索模式。常用的选项包括：cv2.RETR_EXTERNAL: 只提取外部轮廓。cv2.RETR_LIST: 提取所有轮廓，但不建立层次关系。cv2.RETR_TREE: 提取所有轮廓，并建立层次关系。
+* method:轮廓近似方法。常用的选项包括：cv2.CHAIN_APPROX_SIMPLE: 只保留轮廓的端点，减少存储所需的点的数量。cv2.CHAIN_APPROX_NONE: 保留所有轮廓点。
+
+返回值：
+
+* contours: 轮廓的列表，每个轮廓是一个点的数组，表示轮廓的边界
+* hierarchy: 可选的层次结构信息，描述轮廓之间的关系（例如，父轮廓和子轮廓）
+
 #### c++:
 
 1.
