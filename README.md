@@ -327,6 +327,7 @@ cv2.findContours()查找图像中轮廓
 
 * mode:轮廓检索模式。常用的选项包括：cv2.RETR_EXTERNAL: 只提取外部轮廓。cv2.RETR_LIST: 提取所有轮廓，但不建立层次关系。cv2.RETR_TREE: 提取所有轮廓，并建立层次关系。
 * method:轮廓近似方法。常用的选项包括：cv2.CHAIN_APPROX_SIMPLE: 只保留轮廓的端点，减少存储所需的点的数量。cv2.CHAIN_APPROX_NONE: 保留所有轮廓点。
+* image:输入图像，必须是二值图像（即黑白图像），通常通过阈值处理或边缘检测获得。轮廓的边界通常是白色（255），背景是黑色（0）。
 
 返回值：
 
