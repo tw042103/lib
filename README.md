@@ -317,6 +317,34 @@ image.shape返回图像的高度（行数）和宽度（列数）
 
 `num_labels, labels, stats, centroids = cv2.connectedComponentsWithStats(arr_gray, connectivity=8)`
 
+12.
+
+cv2.findContours()查找图像中轮廓
+
+`contours, hierarchy = cv2.findContours(image, mode, method)`
+
+参数：
+
+* mode:轮廓检索模式。常用的选项包括：cv2.RETR_EXTERNAL: 只提取外部轮廓。cv2.RETR_LIST: 提取所有轮廓，但不建立层次关系。cv2.RETR_TREE: 提取所有轮廓，并建立层次关系。
+* method:轮廓近似方法。常用的选项包括：cv2.CHAIN_APPROX_SIMPLE: 只保留轮廓的端点，减少存储所需的点的数量。cv2.CHAIN_APPROX_NONE: 保留所有轮廓点。
+
+返回值：
+
+* contours: 轮廓的列表，每个轮廓是一个点的数组，表示轮廓的边界
+* hierarchy: 可选的层次结构信息，描述轮廓之间的关系（例如，父轮廓和子轮廓）
+
+cv2.drawContours()绘制轮廓
+
+`cv2.drawContours(image, contours, contourIdx, color, thickness, lineType=cv2.LINE_8, hierarchy=None, maxLevel=0, offset=(0, 0))`
+
+参数：
+
+* contours:包含轮廓的列表。通常是通过 cv2.findContours() 函数获得的。
+* contourIdx:要绘制的轮廓的索引。可以是以下值：-1: 绘制所有轮廓。具体的索引值: 只绘制指定索引的轮廓。
+* hierarchy (可选):轮廓的层次结构信息，通常在不需要时可以忽略。
+* maxLevel (可选):指定绘制的轮廓层次的最大级别。默认为 0，表示绘制所有层次。
+* offset (可选):从图像的左上角开始绘制轮廓的偏移量，默认为 (0, 0)
+
 **python中常见函数**
 
 1.np.where 函数接受一个布尔数组作为输入，并返回满足条件的元素的索引。对于二维数组，它会返回两个数组：第一个数组包含满足条件的元素的行索引，第二个数组包含列索引。
@@ -349,20 +377,6 @@ image.shape返回图像的高度（行数）和宽度（列数）
 * `np.ceil()`  向上取整
 * `np.round()`  四舍五入
 * `np.trunc()`  返回小于或等于给定数字的最大整数（与 int() 类似）
-
-13.cv2.findContours()查找图像中轮廓
-
-`contours, hierarchy = cv2.findContours(image, mode, method)`
-
-参数：
-
-* mode:轮廓检索模式。常用的选项包括：cv2.RETR_EXTERNAL: 只提取外部轮廓。cv2.RETR_LIST: 提取所有轮廓，但不建立层次关系。cv2.RETR_TREE: 提取所有轮廓，并建立层次关系。
-* method:轮廓近似方法。常用的选项包括：cv2.CHAIN_APPROX_SIMPLE: 只保留轮廓的端点，减少存储所需的点的数量。cv2.CHAIN_APPROX_NONE: 保留所有轮廓点。
-
-返回值：
-
-* contours: 轮廓的列表，每个轮廓是一个点的数组，表示轮廓的边界
-* hierarchy: 可选的层次结构信息，描述轮廓之间的关系（例如，父轮廓和子轮廓）
 
 #### c++:
 
